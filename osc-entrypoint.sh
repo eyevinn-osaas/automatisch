@@ -22,10 +22,8 @@ fi
 echo "Environment variables have been set!"
 
 if [[ ! -z "$OSC_HOSTNAME" ]]; then
-  export HOST="$OSC_HOSTNAME"
-  export PROTOCOL=https
-else
-  export HOST="localhost"
+  export WEB_APP_URL="https://$OSC_HOSTNAME"
+  export WEBHOOK_URL="https://$OSC_HOSTNAME"
 fi
 
 if [[ ! -z "$REDIS_URL" ]]; then
